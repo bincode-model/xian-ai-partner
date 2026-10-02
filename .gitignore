@@ -1,0 +1,26 @@
+# Dependencies and build output
+node_modules/
+dist/
+# Local runtime state
+server/data/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.env
+.env.*
+!.env.example
+*.log
+*.pid
+# Temporary and machine-specific files
+.DS_Store
+~$*
+*.tmp
+.cache/
+.tmp/
+tmp/
+coverage/
+# Internal release and QA records
+deploy/
+qa/
+publish-records/
+docs/revision-*/

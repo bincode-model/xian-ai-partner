@@ -1,0 +1,42 @@
+{
+  "name": "xian-ai-partner",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5192 --strictPort",
+    "lint": "oxlint src --deny-warnings",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --noEmit && vite build",
+    "test": "python3 -m unittest discover -s tests -p 'backend*.py' -v",
+    "test:experience": "node --test tests/experience-*.test.mjs",
+    "server": "python3 -m server.main --port 8771",
+    "test:frontend": "node --test tests/experience-*.test.mjs tests/lithos-library.test.mjs"
+  },
+  "dependencies": {
+    "framer-motion": "12.42.2",
+    "lucide-react": "1.24.0",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "26.1.1",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.4",
+    "oxlint": "1.76.0",
+    "typescript": "7.0.2",
+    "vite": "8.1.5",
+    "rolldown": "1.1.5"
+  },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "overrides": {
+    "motion-dom": "12.42.2",
+    "postcss": "8.5.23",
+    "nanoid": "3.3.16",
+    "source-map-js": "1.2.1",
+    "picomatch": "4.0.5"
+  }
+}
