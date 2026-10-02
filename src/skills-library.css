@@ -1,0 +1,229 @@
+/* The light reading surface is local to the Skills library; scene pages stay intact. */
+.skills-library {
+  --library-paper: #faf9f5;
+  --library-ink: #292823;
+  --library-secondary: #625e56;
+  --library-muted: #70695f;
+  --library-line: #dedad1;
+  --library-accent: #a34f34;
+  --library-soft: #f0eee7;
+  --library-serif: "Songti SC", "Noto Serif SC", Georgia, serif;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 48px max(6vw, calc((100% - 1240px) / 2)) 54px;
+  scroll-margin-top: 0;
+  background: var(--library-paper);
+  color: var(--library-ink);
+  color-scheme: light;
+  border-bottom: 1px solid var(--library-line);
+  font-family: "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.skills-library ::selection { background: #ead7c9; color: var(--library-ink); }
+.skills-library :is(a, button, input, select, textarea, summary):focus-visible { outline: 2px solid var(--library-accent); outline-offset: 5px; }
+.skills-library .eyebrow { color: var(--library-muted); font-size: 12px; letter-spacing: .12em; }
+.skills-library button { font-family: inherit; }
+.library-heading { display: flex; justify-content: space-between; align-items: end; gap: 28px; margin-bottom: 28px; }
+.library-heading h2 { font-family: var(--library-serif); font-size: clamp(31px, 3.4vw, 46px); font-weight: 600; line-height: 1.35; margin-top: 8px; letter-spacing: -.025em; }
+.library-heading h2:focus { outline: none; }
+.library-total { font-size: 13px; color: var(--library-secondary); margin-top: 12px; }
+.library-heading-actions { text-align: right; }
+.library-heading .library-status { font-size: 12px; color: var(--library-muted); margin: 0; }
+.library-download { display: inline-flex; align-items: center; gap: 24px; padding: 11px 0; border-bottom: 1px solid #cba28d; color: var(--library-accent); font-size: 13px; font-weight: 500; margin-top: 8px; }
+.library-download > span { font-size: 18px; }
+.library-download:hover { border-color: var(--library-accent); }
+.library-shift-overview { display: grid; grid-template-columns: 1.1fr 2fr .7fr; gap: 30px; border-top: 1px solid var(--library-line); padding: 20px 0 22px; }
+.library-shift-overview > div > span { display: block; font-size: 12px; color: var(--library-muted); margin-bottom: 7px; }
+.library-shift-overview strong { display: block; font-weight: 500; font-size: 22px; line-height: 1.5; letter-spacing: .02em; font-variant-numeric: tabular-nums; }
+.library-shift-overview strong > small { display: inline; font-size: 12px; }
+.library-shift-overview small { display: block; font-size: 12px; color: var(--library-muted); margin-top: 7px; line-height: 1.6; }
+.library-shift-overview p { font-size: 14px; line-height: 1.85; color: var(--library-secondary); margin-top: 0; max-width: 600px; }
+.library-tabs { display: flex; align-items: center; gap: 34px; border-bottom: 1px solid var(--library-line); overflow-x: auto; scroll-margin-top: 24px; }
+.library-tabs > button { display: flex; align-items: center; gap: 10px; padding: 14px 0; font-size: 14px; font-weight: 500; border-bottom: 2px solid transparent; color: var(--library-secondary); white-space: nowrap; }
+.library-tabs > button > span { font-size: 12px; font-weight: 400; color: var(--library-muted); font-variant-numeric: tabular-nums; }
+.library-tabs > button[aria-pressed=true] { color: var(--library-accent); border-bottom-color: var(--library-accent); }
+.library-tabs > button[aria-pressed=true] > span { color: var(--library-accent); }
+.library-toolbar { display: flex; align-items: end; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--library-line); }
+.library-toolbar label > span { display: block; font-size: 12px; color: var(--library-muted); margin-bottom: 8px; }
+.library-search { flex: 1; max-width: 420px; }
+.library-toolbar input, .library-toolbar select { display: block; width: 100%; background: #fffefa; border: 1px solid var(--library-line); color: var(--library-ink); padding: 10px 13px; font-size: 14px; line-height: 1.5; border-radius: 8px; }
+.library-toolbar input::placeholder { color: var(--library-muted); }
+.library-toolbar select { min-width: 170px; }
+.library-toolbar select option { background: var(--library-paper); color: var(--library-ink); }
+.library-toolbar > p { font-size: 12px; color: var(--library-muted); margin: 0 0 12px auto; white-space: nowrap; }
+.library-record { border-bottom: 1px solid var(--library-line); }
+.library-record > summary { display: flex; align-items: center; gap: 24px; padding: 23px 0; list-style: none; cursor: pointer; }
+.library-record > summary::-webkit-details-marker { display: none; }
+.library-code { font-size: 12px; min-width: 100px; max-width: 150px; color: var(--library-muted); overflow-wrap: anywhere; line-height: 1.5; }
+.library-record h4 { font-size: 16px; font-weight: 600; line-height: 1.65; }
+.library-record summary p { font-size: 13px; color: var(--library-secondary); margin-top: 5px; line-height: 1.65; }
+.library-record > summary > span:last-child { font-size: 20px; color: var(--library-secondary); margin-left: auto; font-weight: 300; }
+.library-record[open] > summary > span:last-child { transform: rotate(45deg); }
+.library-record > summary > .record-status { font-size: 12px; color: var(--library-muted); margin-left: auto; white-space: nowrap; }
+.library-record > summary > .record-status + span { margin-left: 0; }
+.library-fields { margin: 0; font-size: 14px; line-height: 1.9; }
+.library-fields > div { display: grid; grid-template-columns: 85px minmax(0, 1fr); gap: 18px; margin-bottom: 16px; }
+.library-fields dt { font-size: 12px; color: var(--library-muted); }
+.library-fields dd { margin: 0; color: var(--library-secondary); overflow-wrap: anywhere; white-space: pre-wrap; font-size: 14px; }
+.record-fields { padding: 0 0 25px 124px; }
+.skill-boundaries { margin-top: 10px; }
+.skill-boundaries > summary { display: flex; align-items: center; justify-content: space-between; list-style: none; padding: 20px 0; font-size: 13px; color: var(--library-secondary); cursor: pointer; }
+.skill-boundaries > summary::-webkit-details-marker { display: none; }
+.skill-boundaries[open] > summary > span { transform: rotate(45deg); }
+.skill-boundaries > .library-fields { padding-bottom: 18px; }
+.library-binding { display: flex; flex-wrap: wrap; gap: 10px 19px; align-items: center; margin-top: 10px; padding-top: 16px; border-top: 1px solid var(--library-line); }
+.library-binding > span { font-size: 12px; color: var(--library-muted); margin-right: 10px; }
+.library-binding > button { font-size: 12px; color: var(--library-accent); padding: 6px 0; border-bottom: 1px solid #cba28d; }
+.library-empty, .library-load-state { padding: 45px 0; font-size: 14px; color: var(--library-secondary); line-height: 1.8; }
+.library-empty button, .library-load-state button { margin-top: 15px; padding: 9px 0; border-bottom: 1px solid #cba28d; font-size: 13px; color: var(--library-accent); }
+.library-pagination { display: flex; align-items: center; justify-content: space-between; gap: 25px; padding-top: 23px; color: var(--library-secondary); font-size: 13px; }
+.library-pagination > div { display: flex; align-items: center; gap: 20px; }
+.library-pagination button { border: 1px solid var(--library-line); border-radius: 8px; width: 40px; height: 40px; font-size: 17px; color: var(--library-ink); }
+.library-pagination button:not(:disabled):hover { background: var(--library-soft); border-color: #b7afa0; }
+.library-workflow { list-style: none; padding: 0 0 25px 124px; margin: 0; }
+.library-workflow > li { display: flex; align-items: start; gap: 24px; position: relative; padding: 0 0 26px; font-size: 13px; line-height: 1.8; }
+.library-workflow > li:before { content: ''; position: absolute; width: 1px; left: 16px; top: 36px; bottom: 5px; background: var(--library-line); }
+.library-workflow > li:last-child:before { display: none; }
+.workflow-order { display: grid; place-items: center; width: 34px; height: 34px; flex-shrink: 0; border: 1px solid var(--library-line); border-radius: 50%; font-size: 12px; color: var(--library-accent); }
+.library-workflow .workflow-dependency { font-size: 12px; color: var(--library-muted); margin-bottom: 5px; }
+.workflow-agent { font-size: 14px; color: var(--library-ink); padding: 0 0 6px; margin-bottom: 8px; border-bottom: 1px solid var(--library-line); }
+.library-workflow p { font-size: 13px; color: var(--library-secondary); }
+.library-workflow .workflow-gate { font-size: 12px; color: var(--library-muted); margin-top: 7px; }
+.workflow-skills, .library-id-links { display: flex; gap: 8px 15px; flex-wrap: wrap; }
+.workflow-skills { margin-top: 12px; }
+.workflow-skills button, .library-id-links button { font-size: 12px; padding: 4px 0; border-bottom: 1px solid #cba28d; color: var(--library-accent); }
+
+/* One Skill per page; the existing native scroll-snap and pointer behavior stays unchanged. */
+.skill-pager { padding-top: 0; min-width: 0; }
+.skill-pager-controls { display: flex; align-items: center; justify-content: space-between; gap: 22px; padding: 17px 0; color: var(--library-muted); }
+.skill-pager-controls > p { display: flex; align-items: baseline; gap: 10px; min-width: 110px; margin: 0; font-variant-numeric: tabular-nums; }
+.skill-pager-controls strong { font-family: var(--library-serif); font-size: 27px; font-weight: 600; color: var(--library-ink); line-height: 1; }
+.skill-pager-controls > p > span, .skill-pager-hint { font-size: 12px; }
+.skill-pager-controls > div { display: flex; gap: 10px; }
+.skill-pager-controls button { display: grid; place-items: center; width: 42px; height: 40px; border: 1px solid var(--library-line); border-radius: 8px; font-size: 19px; color: var(--library-ink); transition: background .2s, border-color .2s; }
+.skill-pager-controls button:not(:disabled):hover { background: var(--library-soft); border-color: #b7afa0; }
+.skill-pager-controls button:disabled { opacity: .35; cursor: default; }
+.skill-pager-controls.at-bottom { border-top: 1px solid var(--library-line); }
+.skill-pager-controls.at-bottom .skill-pager-hint { visibility: hidden; }
+.skill-pager-viewport { display: flex; align-items: stretch; overflow-x: auto; overflow-y: hidden; min-width: 0; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; touch-action: auto; cursor: grab; user-select: none; -webkit-user-select: none; border-top: 1px solid var(--library-line); }
+.skill-pager-viewport::-webkit-scrollbar { display: none; }
+.skill-pager-viewport:focus-visible { outline: 2px solid var(--library-accent); outline-offset: 7px; }
+.skill-pager-viewport.is-dragging { cursor: grabbing; }
+.skill-pager-viewport :is(a, button, input, select, textarea, summary) { cursor: pointer; }
+.skill-pager-viewport :is(input, textarea) { cursor: text; user-select: text; -webkit-user-select: text; }
+.skill-pager-page { flex: 0 0 100%; min-width: 0; box-sizing: border-box; scroll-snap-align: start; scroll-snap-stop: normal; contain: layout style; }
+.skill-pager-announcement { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.skill-reading-page { padding: 30px 1px 26px; min-width: 0; }
+.skill-reading-heading { display: flex; justify-content: space-between; align-items: start; gap: 28px; }
+.skill-reading-kicker { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 17px; font-size: 12px; color: var(--library-accent); line-height: 1.7; margin: 0 0 11px; }
+.skill-reading-kicker > span { font-size: 12px; color: var(--library-muted); letter-spacing: .03em; }
+.skill-reading-heading h3 { font-family: var(--library-serif); font-size: clamp(27px, 2.6vw, 36px); font-weight: 600; line-height: 1.4; letter-spacing: -.02em; margin: 0; }
+.skill-reading-status { display: inline-block; flex-shrink: 0; border: 1px solid var(--library-line); background: var(--library-soft); border-radius: 6px; padding: 5px 10px; margin-top: 3px; font-size: 12px; color: var(--library-secondary); }
+.skill-reading-scenario { font-size: 14px; line-height: 1.9; color: var(--library-muted); max-width: 880px; margin: 13px 0 19px; }
+.skill-reading-brief { padding: 14px 0 25px; border-bottom: 1px solid var(--library-line); }
+.skill-reading-brief > span { font-size: 12px; color: var(--library-muted); }
+.skill-reading-brief > p { font-size: 16px; line-height: 1.9; margin: 9px 0 0; max-width: 950px; }
+.skill-reading-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; padding: 30px 0 15px; }
+.skill-reading-page h4 { font-size: 15px; font-weight: 600; line-height: 1.7; margin: 0 0 22px; }
+.skill-reading-page h4 > span { font-size: 12px; font-weight: 400; color: var(--library-muted); margin-left: 12px; }
+.skill-reading-page .library-fields > div { grid-template-columns: 70px minmax(0, 1fr); gap: 18px; margin-bottom: 17px; }
+.skill-reading-page .library-fields dd { font-size: 14px; line-height: 1.85; }
+.skill-reading-time { font-size: 25px; font-weight: 500; font-variant-numeric: tabular-nums; letter-spacing: .015em; line-height: 1.25; margin: 0; }
+.skill-reading-time > span { color: var(--library-muted); font-size: 18px; margin: 0 10px; }
+.skill-reading-cadence { font-size: 12px; color: var(--library-muted); line-height: 1.9; margin: 10px 0 22px; }
+.skill-reading-dispatch { font-size: 12px; line-height: 1.8; color: var(--library-secondary); margin: 16px 0 0; padding-top: 12px; border-top: 1px solid var(--library-line); }
+.skill-reading-metrics { padding-top: 25px; border-top: 1px solid var(--library-line); }
+.skill-metric-grid { display: grid; grid-template-columns: 1fr; }
+.skill-metric-card { display: grid; grid-template-columns: minmax(170px, .75fr) minmax(0, 2fr); column-gap: 42px; min-width: 0; padding: 24px 0 20px; border-top: 1px solid var(--library-line); }
+.skill-metric-number { font-size: 12px; color: var(--library-muted); font-variant-numeric: tabular-nums; }
+.skill-metric-heading h5 { font-size: 14px; line-height: 1.7; font-weight: 500; margin: 8px 0 9px; }
+.skill-metric-heading > strong { display: block; font-size: 25px; line-height: 1.4; font-weight: 500; color: var(--library-accent); margin-bottom: 10px; font-variant-numeric: tabular-nums; }
+.skill-metric-definition > p { font-size: 14px; line-height: 1.85; color: var(--library-secondary); margin: 0 0 12px; overflow-wrap: anywhere; }
+.skill-metric-definition > .skill-metric-sample { color: var(--library-muted); font-size: 13px; }
+.skill-metric-actual { display: block; color: var(--library-muted); font-size: 12px; line-height: 1.7; }
+.skill-metric-card details { grid-column: 2; margin-top: 10px; }
+.skill-metric-card summary { display: flex; justify-content: space-between; gap: 12px; list-style: none; font-size: 12px; color: var(--library-secondary); padding: 9px 0; line-height: 1.7; cursor: pointer; }
+.skill-metric-card summary::-webkit-details-marker { display: none; }
+.skill-metric-card details[open] summary > span { transform: rotate(45deg); }
+.skill-metric-card .library-fields { padding-top: 12px; }
+.skill-reading-page .skill-metric-card .library-fields > div { grid-template-columns: 76px minmax(0, 1fr); margin-bottom: 14px; }
+.skill-metric-card .library-fields dd { font-size: 13px; }
+.skill-reading-page > .skill-boundaries { margin-top: 10px; border-top: 1px solid var(--library-line); }
+.skill-reading-page > .skill-boundaries[open] > .library-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 0 45px; padding-top: 8px; }
+.skill-reading-page .library-binding { margin-top: 0; }
+.skill-reading-page .library-binding > button { font-size: 12px; padding: 7px 0; }
+@media (max-width: 1000px) {
+  .library-shift-overview { gap: 25px; grid-template-columns: 1fr 1.5fr .6fr; }
+  .library-fields > div { grid-template-columns: 70px minmax(0, 1fr); gap: 14px; }
+  .skill-reading-columns { gap: 35px; }
+  .skill-reading-page .library-fields > div { grid-template-columns: 62px minmax(0, 1fr); gap: 13px; }
+  .skill-metric-card { column-gap: 28px; }
+}
+@media (max-width: 680px) {
+  .skills-library { padding: 32px 24px 38px; }
+  .library-heading { align-items: start; flex-direction: column; gap: 16px; margin-bottom: 21px; }
+  .library-heading h2 { font-size: 31px; margin-top: 7px; }
+  .library-total { font-size: 12px; margin-top: 9px; }
+  .library-heading-actions { display: flex; justify-content: space-between; align-items: center; gap: 15px; text-align: left; width: 100%; }
+  .library-heading .library-status { max-width: 130px; line-height: 1.7; }
+  .library-download { font-size: 12px; gap: 15px; margin: 0; padding: 8px 0; white-space: nowrap; }
+  .library-shift-overview { grid-template-columns: 1fr auto; gap: 17px 20px; padding: 18px 0 21px; }
+  .library-shift-overview > div:nth-child(2) { grid-column: 1 / -1; grid-row: 2; }
+  .library-shift-overview > div:nth-child(3) { text-align: right; }
+  .library-shift-overview strong { font-size: 20px; }
+  .library-shift-overview > div:nth-child(3) > small { max-width: 80px; margin-left: auto; }
+  .library-shift-overview p { font-size: 14px; line-height: 1.7; }
+  .library-tabs { gap: 24px; margin-right: -24px; padding-right: 24px; }
+  .library-tabs > button { font-size: 13px; gap: 7px; padding: 13px 0; }
+  .library-toolbar { flex-wrap: wrap; gap: 13px; padding: 18px 0; }
+  .library-search { flex-basis: 100%; max-width: none; }
+  .library-module { flex: 1; }
+  .library-toolbar input, .library-toolbar select { font-size: 16px; }
+  .library-toolbar select { min-width: 0; }
+  .library-toolbar > p { margin-bottom: 12px; }
+  .library-record > summary { flex-wrap: wrap; gap: 7px 10px; padding: 20px 0; position: relative; }
+  .library-code { width: 100%; max-width: none; }
+  .library-record summary > div { flex: 1; min-width: 0; padding-right: 30px; }
+  .library-record h4 { font-size: 15px; }
+  .library-record > summary > span:last-child { position: absolute; right: 0; top: 22px; }
+  .library-record > summary > .record-status { margin-left: 0; }
+  .library-fields > div { grid-template-columns: 66px minmax(0, 1fr); gap: 13px; margin-bottom: 16px; }
+  .record-fields { padding-left: 0; }
+  .library-binding { gap: 9px 16px; }
+  .library-binding > span { width: 100%; }
+  .library-pagination { font-size: 12px; }
+  .library-pagination > div { gap: 13px; }
+  .library-workflow { padding-left: 0; }
+  .library-workflow > li { gap: 16px; }
+  .skill-pager-controls { padding: 14px 0; gap: 12px; }
+  .skill-pager-controls > p { min-width: 0; gap: 7px; }
+  .skill-pager-controls strong { font-size: 24px; }
+  .skill-pager-controls > div { gap: 8px; }
+  .skill-pager-controls button { width: 36px; height: 36px; font-size: 17px; }
+  .skill-reading-page { padding: 27px 1px 22px; }
+  .skill-reading-heading { gap: 16px; }
+  .skill-reading-kicker { gap: 6px 10px; margin-bottom: 10px; }
+  .skill-reading-heading h3 { font-size: 27px; line-height: 1.5; }
+  .skill-reading-status { padding: 5px 9px; margin-top: 0; }
+  .skill-reading-scenario { margin: 14px 0 17px; }
+  .skill-reading-brief { padding: 10px 0 23px; }
+  .skill-reading-brief > p { font-size: 15px; }
+  .skill-reading-columns { grid-template-columns: 1fr; gap: 25px; padding: 26px 0 24px; }
+  .skill-reading-page h4 { font-size: 14px; margin-bottom: 19px; }
+  .skill-reading-page h4 > span { display: block; margin: 5px 0 0; }
+  .skill-reading-page .library-fields > div { grid-template-columns: 62px minmax(0, 1fr); gap: 14px; margin-bottom: 16px; }
+  .skill-reading-time { font-size: 24px; }
+  .skill-metric-card { grid-template-columns: 1fr; padding: 22px 0; }
+  .skill-metric-heading { display: grid; grid-template-columns: 24px minmax(0, 1fr) auto; align-items: baseline; gap: 9px; margin-bottom: 15px; }
+  .skill-metric-heading h5 { font-size: 14px; margin: 0; }
+  .skill-metric-heading > strong { font-size: 22px; margin: 0; white-space: nowrap; }
+  .skill-metric-card details { grid-column: 1; }
+  .skill-reading-page .skill-metric-card .library-fields > div { grid-template-columns: 62px minmax(0, 1fr); }
+  .skill-reading-page > .skill-boundaries[open] > .library-fields { grid-template-columns: 1fr; gap: 0; }
+  .skill-reading-page .library-binding { gap: 9px 15px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .skill-pager-viewport { scroll-behavior: auto; }
+  .skill-pager-controls button { transition: none; }
+}

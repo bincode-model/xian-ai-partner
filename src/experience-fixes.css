@@ -1,0 +1,38 @@
+/* Keep the original glass and camera scene; repair navigation layering. */
+.experience-fixed .experience-header{z-index:42}
+.experience-fixed .experience-header>.experience-brand-group{gap:24px}
+.experience-fixed .experience-header .experience-brand-link{font-size:12px;letter-spacing:.025em;white-space:nowrap}
+.experience-fixed .experience-sector-drawer{z-index:40;max-height:calc(100svh - 130px);overflow:auto}
+.experience-fixed .portfolio-story{z-index:30;top:calc(50% + 35px);max-height:calc(100svh - 155px)}
+.experience-fixed .experience-header>div>.experience-return{border:0;background:transparent;backdrop-filter:none;padding:10px 0;white-space:nowrap;font-size:12px}
+.experience-index-entry{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:center;border-top:1px solid #ffffff20}
+.experience-fixed .experience-index-entry>button{width:100%;border-top:0}
+.experience-index-entry>a{font-size:10px;white-space:nowrap;color:#e6d4b8;padding:12px 0}
+.experience-fixed button:focus-visible,.experience-fixed a:focus-visible{outline:2px solid #e6d4b8;outline-offset:5px}
+.particle-industry-panel{position:absolute;bottom:52px;left:4vw;z-index:6;width:min(530px,calc(100% - 8vw));padding:21px 24px;box-sizing:border-box;border:1px solid #ffffff32;border-radius:22px;background:linear-gradient(140deg,#ffffff0a,transparent),#070d10a8;backdrop-filter:blur(18px);box-shadow:0 14px 45px #0003}
+.particle-industry-heading{display:flex;align-items:center;gap:18px;margin-bottom:14px}
+.particle-industry-heading>span{color:#cec2ae;font-size:10px;letter-spacing:.08em}
+.particle-industry-heading h2{margin:0;font-size:19px;font-weight:400;flex:1}
+.particle-industry-heading>div{display:flex;gap:8px}
+.particle-industry-heading button{width:34px;height:34px;border:1px solid #ffffff30;border-radius:50%;font-size:17px}
+.particle-industry-copy{font-size:12px;line-height:1.85;color:#e2e3df}
+.particle-industry-copy p{margin:0}.particle-industry-copy p+p{margin-top:9px}
+.particle-industry-actions{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:17px;padding-top:13px;border-top:1px solid #ffffff26}
+.particle-industry-actions>span{font-size:10px;color:#c3c8c6}.particle-industry-actions>a{font-size:11px;white-space:nowrap;color:#eee1ca}
+.particle-industry-panel>small{display:block;color:#b4bcb9;font-size:10px;line-height:1.65;margin-top:13px}
+@media(max-width:680px){
+  .experience-fixed .experience-header{gap:8px}
+  .experience-fixed .experience-header>div{gap:12px}
+  .experience-fixed .experience-header>.experience-brand-group{flex-direction:column;align-items:flex-start;gap:5px}
+  .experience-fixed .experience-header .experience-brand-link span{display:none}
+  .experience-fixed .experience-header>div>.experience-return{font-size:12px;padding:5px 0}
+  .experience-fixed .experience-header>.experience-brand-group>a{display:block;font-size:12px}
+  .experience-fixed .experience-header>div>button{gap:8px;padding-inline:11px}
+  .experience-fixed .experience-sector-drawer{padding:20px;width:calc(100vw - 48px)}
+  .experience-index-entry{gap:8px}.experience-index-entry>a{font-size:10px}
+  .experience-fixed .portfolio-story{top:calc(50% + 28px);max-height:calc(100svh - 135px)}
+  .particle-industry-panel{left:24px;bottom:52px;width:calc(100% - 48px);padding:17px 19px;max-height:calc(100svh - 205px);overflow:auto;overscroll-behavior:contain}
+  .particle-industry-heading{gap:12px;margin-bottom:10px}.particle-industry-heading h2{font-size:17px}
+  .particle-industry-copy{font-size:12px;line-height:1.75}
+  .particle-industry-actions{gap:12px;margin-top:13px}.particle-industry-actions>span{max-width:170px;line-height:1.7}
+}

@@ -1,0 +1,11 @@
+.experience-ice-labels{position:absolute;inset:0;z-index:7;pointer-events:none;overflow:hidden}
+.experience-ice-labels[hidden]{display:none}
+.experience-ice-label{position:absolute;left:0;top:0;display:flex;align-items:center;gap:9px;transform:translate3d(0,0,0) translate(-50%,calc(-100% - 18px));will-change:transform;transition:opacity 80ms linear;padding:9px 13px;border:1px solid #edf3ee55;border-radius:999px;background:linear-gradient(130deg,#ffffff18,#10181ed9);backdrop-filter:blur(10px);box-shadow:0 4px 19px #0003;color:#fff;white-space:nowrap;pointer-events:auto;cursor:pointer}
+.experience-ice-label[hidden]{display:none}
+.experience-ice-label>span{font-size:10px;letter-spacing:.05em;color:#d1d9d9}
+.experience-ice-label>strong{font-size:12px;font-weight:400;letter-spacing:.04em}
+.experience-ice-label::before{content:"";position:absolute;top:100%;left:50%;height:13px;width:1px;background:#edf3ee80;pointer-events:none}
+.experience-ice-label::after{content:"";position:absolute;top:calc(100% + 13px);left:calc(50% - 2px);width:5px;height:5px;border-radius:50%;background:#f3f7f1;box-shadow:0 0 8px #dce9f0;pointer-events:none}
+.experience-ice-label:hover{border-color:#ffffffaa;background:#182a36e6}
+@media(max-width:680px){.experience-ice-label{padding:8px 11px;gap:7px}.experience-ice-label>strong{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.experience-ice-label{transition:none}}
