@@ -41,9 +41,19 @@
 
 ## 源码与素材下载
 
-**推荐直接运行完整版本：** 从本仓库 [Releases](https://github.com/bincode-model/xian-ai-partner/releases) 下载 `xian-ai-partner-source.zip`。压缩包包含全部 300 个源码、说明与素材文件，解压后按下方步骤运行。
+**首选下载完整源码包：** 请打开本仓库 [Releases](https://github.com/bincode-model/xian-ai-partner/releases)，下载 `xian-ai-partner-source.zip` 并直接解压。它包含全部 300 个源码、说明与素材文件，解压后即可按下方步骤运行。
 
-GitHub 仓库页面提供可浏览的核心源码、配置、测试与项目说明。通过 Git clone 或 GitHub 的 Download ZIP 获取的仓库不包含 `public/` 素材目录；视频、3D 模型与贴图、声音、行业配图、Skills 数据及 Excel、PPT/PDF 均保存在上述完整源码包中。
+**可选备用：** 如果完整 ZIP 下载不稳定，可改用 `xian-ai-partner-source.zip.001` 至 `.014` 分卷。请把 **全部 14 卷**、`restore.py` 和 `parts-manifest.json` 下载到同一个文件夹。进入这个文件夹，在终端执行：
+
+```bash
+python3 restore.py
+```
+
+脚本按它所在的文件夹读取分卷和清单，逐卷校验 SHA-256，在同一文件夹组装 `xian-ai-partner-source.zip`，校验完整包 SHA-256 与 ZIP CRC，再解压到该文件夹下的 `restored/xian-ai-partner/`。进入 `restored/xian-ai-partner/` 后，按下方“本地运行”步骤安装和启动。分卷不能分别解压；缺少任何一卷都不能还原。
+
+完整源码包 SHA-256：`cd3202f69e7f076c4cb01fe254bfb31902b9af9a442087b93854afd5762928e4`。
+
+GitHub 仓库页面提供可浏览的 51 个核心源码、配置、测试与项目说明文件。通过 Git clone 或 GitHub 的 Download ZIP 获取的仓库，以及 Release 中的 `xian-ai-partner-core-source.zip`，均不包含 `public/` 素材目录；视频、3D 模型与贴图、声音、行业配图、Skills 数据及 Excel、PPT/PDF 均保存在完整源码包中。
 
 如果已经克隆仓库，请从完整源码包提取整个 `public/` 目录，放到项目根目录，与 `src/`、`server/` 和 `package.json` 同级。补齐后再启动或构建项目；完整源码包本身无需额外补齐素材。
 
