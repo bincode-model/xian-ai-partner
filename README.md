@@ -1,5 +1,4 @@
-# AI 终身合伙人 · 长安八业
-
+AI软件赛道 - AI终身合伙人·长安八业 - ai终身合伙人
 面向西安八个行业的 AI 工作任务展示与文件处理项目。把重复工作拆成有输入、交付产物、接收岗位和验收标准的 Skills，再通过岗位 Agent 与协作规则组织工作。
 
 **体验网站：** [xian.wutiantian.cn](https://xian.wutiantian.cn/)
